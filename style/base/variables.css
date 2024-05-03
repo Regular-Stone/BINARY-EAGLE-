@@ -1,0 +1,10 @@
+:root {
+    --primary_background_color : #202124;
+    --primary_text_color : #fefefe;
+    --heading-font : 'Abel', sans-serif;
+    --transparent_grey : rgba(255, 255, 255, 0.5);
+    --purple_color : #733C83;
+    --another_purple : #503C83;
+    --anth_purple : #833C6F;
+    --content-font : 'Rubik', sans-serif;
+}

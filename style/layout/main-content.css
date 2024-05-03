@@ -1,0 +1,33 @@
+.main-content {
+    padding-top: 15vh;
+    background: url(../../img/boy.jpg) no-repeat center center/cover;
+    height: 85vh;
+    color: var(--primary_text_color);
+    font-family: var(--content-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .main-content__text {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            font-size: 5rem;
+            padding: 3rem 0 1.5rem 0;
+            max-width: 80%;
+        }
+
+        P {
+            font-size: 2.4rem;
+            line-height: 200%;
+            padding: 2rem 0;
+            max-width: 80%;
+            text-shadow: 2px 2px 2px rgba(39, 39, 39, 0.5);
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.follow_button {
+    padding: 1rem 2rem;
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background: var(--another_purple);
+    border: var(--primary_text_color) 2px solid;
+    
+    a {
+        color: var(--primary_text_color);
+        text-decoration: none;
+    }
+}

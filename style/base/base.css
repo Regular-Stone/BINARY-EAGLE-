@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple_color) var(--primary_background_color);
+}
+
+body {
+    font-size: 1.6rem;
+}
