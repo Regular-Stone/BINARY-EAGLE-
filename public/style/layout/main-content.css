@@ -1,6 +1,6 @@
 .main-content {
     padding-top: 15vh;
-    background: url(../../img/boy.jpg) no-repeat center center/cover;
+    background: url(/binary_back/public/imgs/boy.jpg) no-repeat center center/cover;
     height: 85vh;
     color: var(--primary_text_color);
     font-family: var(--content-font);
