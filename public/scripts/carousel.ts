@@ -1,7 +1,7 @@
-const carouselItems = document.querySelectorAll('.carousel__item');
-const backArrow = document.querySelector('.back_arrow');
-const forwardArrow = document.querySelector('.forward_arrow');
-const dots = document.querySelectorAll('.dot');
+const carouselItems = document.querySelectorAll('.carousel__item') as NodeListOf<HTMLElement>;
+const backArrow = document.querySelector('.back_arrow') as HTMLElement | null;
+const forwardArrow = document.querySelector('.forward_arrow') as HTMLElement | null;
+const dots = document.querySelectorAll('.dot') as NodeListOf<HTMLElement>;
 let currentIndex = 0;
 
 // Initialisation
@@ -25,7 +25,7 @@ forwardArrow?.addEventListener('click', () => {
     setTimeout(() => carouselItems[currentIndex].classList.remove('next'), 1000);
 });
 
-dots.forEach((dot, index) => {
+dots.forEach((dot: HTMLElement, index: number) => {
     dot.addEventListener('click', () => {
         carouselItems[currentIndex].classList.remove('active');
         dots[currentIndex].classList.remove('active');
