@@ -6,9 +6,15 @@
     font-weight: bold;
     background: var(--another_purple);
     border: var(--primary_text_color) 2px solid;
-    
-    a {
-        color: var(--primary_text_color);
-        text-decoration: none;
+    color: var(--primary_text_color);
+    text-decoration: none;
+    &:hover {
+        background: var(--primary_text_color);
+        transform: scale(1.12);
+        color: var(--another_purple);
+    }
+
+    &:active {
+        transform: scale(1.06);
     }
 }

@@ -1,14 +1,17 @@
-/* Ajout des règles de base du projet */
-@import url('./base/base.css');
-
 /* Ajout des variables */
 @import url('./base/variables.css');
+
+/* Ajout des règles de base du projet */
+@import url('./base/base.css');
 
 /* Ajout des règles du header */
 @import url('./layout/header.css');
 
 /* Ajout des règles de la nav */
 @import url('./components/nav.css');
+
+/* Ajout des règles du carousel */
+@import url('./components/carousel.css');
 
 /* Ajout des règles main-content */
 @import url('./layout/main-content.css');
