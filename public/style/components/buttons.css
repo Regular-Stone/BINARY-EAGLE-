@@ -8,6 +8,7 @@
     border: var(--primary_text_color) 2px solid;
     color: var(--primary_text_color);
     text-decoration: none;
+    
     &:hover {
         background: var(--primary_text_color);
         transform: scale(1.12);
