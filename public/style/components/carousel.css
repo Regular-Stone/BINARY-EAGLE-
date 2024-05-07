@@ -3,6 +3,7 @@
     height: 85vh;
     position: relative;
     overflow: hidden;
+    
 
     .carousel__item {
         width: 100%;
@@ -15,8 +16,8 @@
         font-weight: 700;
         text-align: center;
         opacity: 0;
-        transition: opacity 1s, filter 1s;
-        filter: blur(15px);
+        transition: opacity 1s, filter .8s;
+        filter: blur(25px);
         position: absolute;
         z-index: 0;
     }
@@ -45,6 +46,7 @@
         cursor: pointer;
         padding:  2rem;
         height: 6rem;
+        transition: all .3s ease-in-out;
 
         &:hover {
             transform:  translateY(-50%) scale(1.12);
@@ -83,6 +85,7 @@
             border: .2rem solid var(--primary_text_color);
             cursor: pointer;
             box-sizing: border-box;
+            transition: all .3s;
 
             &:hover {
                 transform: scale(1.12);

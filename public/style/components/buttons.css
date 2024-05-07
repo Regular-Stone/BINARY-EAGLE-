@@ -8,6 +8,8 @@
     border: var(--primary_text_color) 2px solid;
     color: var(--primary_text_color);
     text-decoration: none;
+    cursor: pointer;
+    transition: all .3s;
     
     &:hover {
         background: var(--primary_text_color);
@@ -17,5 +19,22 @@
 
     &:active {
         transform: scale(1.06);
+    }
+}
+
+.back_to_home {
+    font-size: 2rem;
+    padding: .5rem 1rem;
+    margin-top: 2rem;
+    border: 2px solid var(--primary_text_color);
+    border-radius: 5px;
+    color: var(--primary_text_color);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: var(--primary_text_color);
+        color: var(--primary_background_color);
     }
 }

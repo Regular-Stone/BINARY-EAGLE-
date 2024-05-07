@@ -31,7 +31,7 @@ $page = str_replace('/binary_back', '', $path);
 if (array_key_exists($page, $pathsAllowed)) {
     $page = $pathsAllowed[$page];
 } else {
-    $page = '404';
+    header('location: /binary_back/404');
 }
 
 $newDb = database();
