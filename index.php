@@ -21,10 +21,7 @@ $pathsAllowed = [
 ];
 
 
-// le chemin complet est localhost:8000/binary_back/...
-// on veut juste le chemin après le localhost:8000
-// on utilise la fonction str_replace() pour remplacer le chemin complet par rien
-// on obtient donc juste le chemin après le localhost:8000
+// On récupère le chemin de la page en utilisant la fonction str_replace() pour supprimer le chemin /binary_back
 $page = str_replace('/binary_back', '', $path);
 
 // Le tableaux de routes à en clef le chemin et en valeur le nom de la vue
