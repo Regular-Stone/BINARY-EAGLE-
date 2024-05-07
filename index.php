@@ -20,6 +20,7 @@ $pathsAllowed = [
     '/404' => '404'
 ];
 
+
 // le chemin complet est localhost:8000/binary_back/...
 // on veut juste le chemin après le localhost:8000
 // on utilise la fonction str_replace() pour remplacer le chemin complet par rien
@@ -36,6 +37,7 @@ if (array_key_exists($page, $pathsAllowed)) {
     $page = '404';
 }
 
+$newDb = database();
 
 
 require_once templateUrl;

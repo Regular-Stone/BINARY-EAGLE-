@@ -1,29 +1,28 @@
-<section class="main-content carousel">
-    <!-- Premier Article -->
-    <div class="main-content__article carousel__item active">
-        <h1>Binary Eagle</h1>
-        <p>Bienvenue sur le site de Binary Eagle, une association Niçoise mais surtout une communauté de joueurs et joueuses passionné.es de jeux vidéos. Nous organisons des événements, des soirées gaming régulièrement. Rejoignez-nous sur Twitch et Discord pour ne rien rater de nos actualités.</p>
-        <a class="follow_button" href="discord">Nous Rejoindre</a>
-    </div>
-    <!-- Deuxième Article -->
-    <div class="main-content__article carousel__item">
-        <h1>Les prochains Events</h1>
-        <p>Retrouvez ici les prochains événements organisés par Binary Eagle. Que ce soit des soirées gaming, des tournois ou des streams, vous trouverez forcément votre bonheur. Rejoignez-nous sur Twitch et Discord pour ne rien rater de nos actualités.</p>
-        <a class="follow_button" href="discord">Nous Rejoindre</a>
-    </div>
-    <!-- Troisième Article -->
-    <div class="main-content__article carousel__item">
-        <h1>Lorem ipsum dolor sit, amet consectetur adipisicing.</h1>
-        <p>Retrouvez ici les prochains événements organisés par Binary Eagle. Que ce soit des soirées gaming, des tournois ou des streams, vous trouverez forcément votre bonheur. Rejoignez-nous sur Twitch et Discord pour ne rien rater de nos actualités.</p>
-        <a class="follow_button" href="discord">Nous Rejoindre</a>
-    </div>
-    <!-- Quatrième Article -->
-    <div class="main-content__article carousel__item">
-        <h1>Lorem ipsum dolor sit amet.</h1>
-        <p>Retrouvez ici les prochains événements organisés par Binary Eagle. Que ce soit des soirées gaming, des tournois ou des streams, vous trouverez forcément votre bonheur. Rejoignez-nous sur Twitch et Discord pour ne rien rater de nos actualités.</p>
-        <a class="follow_button" href="discord">Nous Rejoindre</a>
-    </div>
+<!-- Récupération des datas de la base de données -->
+<?php
+
+    $query = $newDb->query('SELECT main_content_title,main_content_content,img_path FROM main_content');
+    $data = $query->fetchAll();
+    $query->closeCursor();
     
+?>
+<style>
+<?foreach($data as $index => $content): ?>
+.main-content__article:nth-child(<?= $index + 1 ?>) {
+background: url(/binary_back/public/imgs/<?= $content['img_path'] ?>) no-repeat center center/cover;
+}
+<?endforeach; ?>
+</style>
+
+<section class="main-content carousel">
+    <?php foreach ($data as $index => $content): ?>
+        <?php if ($index >= 4) break; // Arrête la boucle après 4 articles ?>
+        <div class="main-content__article carousel__item <?= $index === 0 ? 'active' : '' ?>">
+            <h1><?= $content['main_content_title'] ?></h1>
+            <p><?= $content['main_content_content'] ?></p>
+            <a class="follow_button" href="discord">Nous Rejoindre</a>
+        </div>
+    <?php endforeach; ?>
 
     <!-- Composents du carousel -->
     <img src="/binary_back/public/imgs/arrow_back.svg" alt="fléche gauche du carousel" class="back_arrow"> 

@@ -14,7 +14,6 @@
         font-size: 2rem;
         font-weight: 700;
         text-align: center;
-        background: url(/binary_back/public/imgs/boy.jpg) no-repeat center center/cover;
         opacity: 0;
         transition: opacity 1s, filter 1s;
         filter: blur(15px);
@@ -37,17 +36,6 @@
     }
     
     
-    .carousel__item:nth-child(2) {
-        background: url(/binary_back/public/imgs/man.jpg) no-repeat center center/cover;
-    }
-
-    .carousel__item:nth-child(3) {
-        background: url(/binary_back/public/imgs/past.jpg) no-repeat center center/cover;
-    }
-
-    .carousel__item:nth-child(4) {
-        background: url(/binary_back/public/imgs/bg.jpg) no-repeat center center/cover;
-    }
     
     .back_arrow, .forward_arrow {
         position: absolute;
