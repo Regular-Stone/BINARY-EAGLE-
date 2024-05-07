@@ -33,7 +33,7 @@
                 height: 100%;
                 box-sizing: border-box;
                 border-bottom: .5rem solid transparent;
-                transition: all .3s;
+                transition: background .3s, border-bottom .6s;
 
                 &:hover{
                     background-color: var(--purple_color);
