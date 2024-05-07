@@ -23,10 +23,6 @@
             width: 100%;
             height: 100%;
 
-            &:hover {
-                color: var(--primary_hover_color);
-            }
-
             .nav-link {
                 text-decoration: none;
                 display: flex;
@@ -37,6 +33,7 @@
                 height: 100%;
                 box-sizing: border-box;
                 border-bottom: .5rem solid transparent;
+                transition: all .3s;
 
                 &:hover{
                     background-color: var(--purple_color);
