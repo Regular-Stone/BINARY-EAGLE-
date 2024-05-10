@@ -7,7 +7,7 @@ $url = parse_url(sanitaze($_SERVER['REQUEST_URI']));
 
 
 $path = isset($url['path']) ? $url['path'] : '/';
-$badPath = false;
+
 
 // Tableaux des routes
 $pathsAllowed = [
