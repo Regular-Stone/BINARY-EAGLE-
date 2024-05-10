@@ -36,7 +36,11 @@ if (array_key_exists($page, $pathsAllowed)) {
     require_once './app/controllers/Controller' . ucfirst($pathsAllowed[$page]) . '.php'; 
     $controller = 'Controller' . ucfirst($pathsAllowed[$page]);
     $controller = new $controller();
-    $controller->index($db);
+    if ($page === '/' || $page === '/accueil' || $page === '/event') {
+        $controller->index($db);
+    } else {
+        $controller->index();
+    }
 } else {
     header('location: /binary_back/404');
 }
