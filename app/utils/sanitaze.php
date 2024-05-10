@@ -9,8 +9,3 @@
         // trim() supprime les espaces (ou d'autres caractères) en début et fin de chaîne
     }
 
-    function database(){
-        $db = new PDO('mysql:host=localhost;dbname=binary_eagle;charset=utf8', 'root', 'hellodu47');
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $db;
-    }

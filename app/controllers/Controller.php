@@ -1,11 +1,12 @@
 <?php
     abstract class Controller {
         // Méthode pour afficher une vue
-        public function renderView(string $path, array $data = []) :string{
-            ob_start();
-            extract($data);
+        public function renderView(string $path , array $data) :string{
+            ob_start(); // Démarre la temporisation de sortie
+            require_once __DIR__ . '/../views/header.php';
             require_once __DIR__ . '/../views/' . $path . '.php';
-            return ob_get_clean();
+            require_once __DIR__ . '/../views/footer.php';
+            return ob_get_clean(); // Lit le contenu courant du tampon de sortie puis l'efface
         }
 
         // Méthode pour rediriger l'utilisateur
@@ -16,7 +17,7 @@
 
         // Méthode pour charger un modèle
         public function loadModel(string $model) :object{
-            $allowedModels = ['User', 'Database', 'Admin']; // Modèles autorisés
+            $allowedModels = ['User', 'Database', 'Admin', 'MainContent']; // Modèles autorisés
         
             $validatedModel = $this->validate($model, 'model'); 
         
@@ -34,7 +35,7 @@
 
         // Méthode pour valider les données
         public function validate(string $data, string $rules) :string{
-        require_once './app/utils/functions.php';
+        require_once './app/utils/database.php';
         $pattern = '//';
         $data = sanitaze($data);
         switch($rules){
