@@ -18,7 +18,8 @@ $pathsAllowed = [
     '/events' => 'events',
     '/twitch' => 'twitch',
     '/discord' => 'discord',
-    '/404' => '404'
+    '/404' => '404',
+    '/admin' => 'adminConnect',
 ];
 
 // On récupère le chemin de la page en utilisant la fonction str_replace() pour supprimer le chemin /binary_back

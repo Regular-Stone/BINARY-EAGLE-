@@ -1,4 +1,5 @@
 <?php
+    
     function database() : PDO{
         require_once 'env_database.php';
         try {

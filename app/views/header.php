@@ -19,12 +19,15 @@
         </div>
         <nav class="nav">
             <ul class="nav-list">
-                <li class="nav-item"><a href="accueil" class="nav-link">Accueil</a></li>
+                <li class="nav-item "><a href="accueil" class="nav-link">Accueil</a></li>
                 <li class="nav-item"><a href="a-propos" class="nav-link">A propos</a></li>
                 <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="events" class="nav-link">Events <img src="./img/expand_more.svg" alt=""></a></li>
-                <li class="nav-item"><a href="twitch" class="nav-link">Twitch</a></li>
-                <li class="nav-item"><a href="discord" class="nav-link">Discord</a></li>
+                <li class="nav-item"><a href="events" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="twitch" class="nav-link">Twitch <img class="media_twitch" src="/binary_back/public/imgs/twitch_ico.png" alt="logo_twitch"></a></li>
+                <li class="nav-item"><a href="discord" class="nav-link">Discord <img class="media_discord" src="/binary_back/public/imgs/discord_ico.png" alt="logo_discord"></a></li>
+                
             </ul>
         </nav>
+        <!-- Script pour ajouter une class 'active' sur le lien de la nav-list sur lequel l'utilisateur est actuellement -->
+        <script src="/binary_back/public/scripts/activePage.js"></script>
     </header>
