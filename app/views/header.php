@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Eagle</title>
@@ -30,4 +31,5 @@
         </nav>
         <!-- Script pour ajouter une class 'active' sur le lien de la nav-list sur lequel l'utilisateur est actuellement -->
         <script src="/binary_back/public/scripts/activePage.js"></script>
+        <script type="module" src="/binary_back/public/scripts/resetStorage.js"></script>
     </header>

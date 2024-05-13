@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <div class="main-content">
     <style>
         .main-content {
@@ -24,12 +25,26 @@
                 font-size: 2.2rem;
             }
 
+            span {
+                color: red;
+            }
+
             input, select{
                 font-size: 1.5rem;
                 width: 35%;
                 padding: 1rem;
                 box-sizing: border-box;
                 font-family: var(--content-font);
+
+
+                option {
+                    background-color: #fefefe;
+                    color : #000;
+
+                    &:disabled {
+                        background: #cecece important!;
+                    }
+                }
             }
             textarea {
                 font-size: 1.5rem;
@@ -38,14 +53,20 @@
                 width: 100%;
                 font-family: var(--content-font);
             }
-            button {
+
+            .buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                column-gap: 2rem;
+
+                button{
                 padding: 1rem 2rem;
                 background-color: var(--purple_color);
                 color: #fff;
                 border: var(--primary_text_color) 2px solid;
                 cursor: pointer;
                 width: 20%;
-                margin: 0 auto;
                 font-size: 2rem;
                 font-weight: bold;
                 transition: all 0.3s;
@@ -55,8 +76,14 @@
                     color: var(--purple_color);
                     font-weight: bold;
                     transform: scale(1.1);
+                    }
                 }
             }
+
+            .g-recaptcha {
+                margin: 0 auto;
+            }
+
 
             #name, #email, #subject, select, option{
                 border: 2px solid var(--another_purple);
@@ -70,25 +97,33 @@
             }
         }
     }
-
     </style>
+
     <h1>Contact</h1>
     <p>Vous pouvez nous contacter en remplissant le formulaire ci-dessous.</p>
-    <form class="contact-form" action="post">
-        <label for="name">Nom</label>
+    <form class="contact-form" method="bab" action="post">
+        <label for="name">Nom <span>*</span></label>
         <input type="text" id="name" name="name" required>
-        <label for="email">Email</label>
+        <label for="email">Email <span>*</span></label>
         <input type="email" id="email" name="email" required>
-        <label for="subject">Sujet</label>
+        <label for="subject">Sujet <span>*</span></label>
         <select id="subject" name="subject" required>
+            <option  selected disabled value="">Veuillez choisir une option</option>
             <option value="question">Question</option>
             <option value="suggestion">Suggestion</option>
             <option value="autre">Autre</option>
             <!-- Option pour les rapports de bugs -->
             <option value="bug">Rapport de bug</option>
         </select>
-        <label for="message">Message</label>
+        <label for="message">Message <span>*</span></label>
         <textarea id="message" name="message" required></textarea>
-        <button type="submit">Envoyer</button>
+        <div class="g-recaptcha" data-sitekey="6LdFI9spAAAAAESu8Yn3Rpb4RnrbfVB3xQSGPZje" data-theme="dark"></div>
+        <div class="buttons">
+            <button type="submit">Envoyer</button>
+            <button id="reset" type="reset">Annuler</button>
+        </div>
     </form>
+    <script  src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="module" src="/binary_back/public/scripts/contactForm.js"></script>
+    <script src="/binary_back/public/scripts/formDataBackup.js"></script>
 </div>

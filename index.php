@@ -34,10 +34,13 @@ if (array_key_exists($page, $pathsAllowed)) {
     // On se connecte à la base de données
     $db = database();
     // On appelle le contrôleur correspondant à la page
+    if($page ==="/"){
+        header('location: /binary_back/accueil');
+    }
     require_once './app/controllers/Controller' . ucfirst($pathsAllowed[$page]) . '.php'; 
     $controller = 'Controller' . ucfirst($pathsAllowed[$page]);
     $controller = new $controller();
-    if ($page === '/' || $page === '/accueil' || $page === '/event') {
+    if ($page === '/accueil' || $page === '/event') {
         $controller->index($db);
     } else {
         $controller->index();
