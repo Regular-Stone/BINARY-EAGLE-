@@ -15,6 +15,7 @@ $pathsAllowed = [
     '/accueil' => 'home',
     '/a-propos' => 'about',
     '/contact' => 'contact',
+    '/contact/submit' => 'contact',
     '/events' => 'events',
     '/twitch' => 'twitch',
     '/discord' => 'discord',
@@ -37,15 +38,20 @@ if (array_key_exists($page, $pathsAllowed)) {
     if($page ==="/"){
         header('location: /binary_back/accueil');
     }
+    if ($page === '/contact/submit') {
+        require_once './app/controllers/ControllerContact.php';
+        $controller = new ControllerContact();
+        echo $controller->handleFormSubmission($_POST);
+    }
     require_once './app/controllers/Controller' . ucfirst($pathsAllowed[$page]) . '.php'; 
     $controller = 'Controller' . ucfirst($pathsAllowed[$page]);
     $controller = new $controller();
-    if ($page === '/accueil' || $page === '/event') {
+    if ($page === '/accueil' || $page === '/event' || $page === '/contact') {
         $controller->index($db);
     } else {
-        $controller->index();
+        $controller->index($db);
     }
 } else {
-    header('location: /binary_back/404');
+
 }
 

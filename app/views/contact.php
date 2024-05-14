@@ -42,7 +42,7 @@
                     color : #000;
 
                     &:disabled {
-                        background: #cecece important!;
+                        background: #cecece;
                     }
                 }
             }
@@ -98,16 +98,36 @@
         }
     }
     </style>
+    <? if(isset($_GET['success'])): ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Message envoyé avec succès',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        </script>
+    <? endif; ?>
 
+    <? if(isset($_GET['error']) && $_GET['error'] == 'missing_data'): ?>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Veuillez remplir tous les champs.',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>
+<? endif; ?>
     <h1>Contact</h1>
     <p>Vous pouvez nous contacter en remplissant le formulaire ci-dessous.</p>
-    <form class="contact-form" method="bab" action="post">
+    <form class="contact-form" method="post" action="contact/submit">
         <label for="name">Nom <span>*</span></label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name"  >
         <label for="email">Email <span>*</span></label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email"  >
         <label for="subject">Sujet <span>*</span></label>
-        <select id="subject" name="subject" required>
+        <select id="subject" name="subject"  >
             <option  selected disabled value="">Veuillez choisir une option</option>
             <option value="question">Question</option>
             <option value="suggestion">Suggestion</option>
@@ -116,7 +136,7 @@
             <option value="bug">Rapport de bug</option>
         </select>
         <label for="message">Message <span>*</span></label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea id="message" name="message"  ></textarea>
         <div class="g-recaptcha" data-sitekey="6LdFI9spAAAAAESu8Yn3Rpb4RnrbfVB3xQSGPZje" data-theme="dark"></div>
         <div class="buttons">
             <button type="submit">Envoyer</button>
@@ -125,5 +145,4 @@
     </form>
     <script  src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="module" src="/binary_back/public/scripts/contactForm.js"></script>
-    <script src="/binary_back/public/scripts/formDataBackup.js"></script>
 </div>

@@ -57,6 +57,24 @@
                     throw new Exception("Invalid model name");
                 }
                 return $data;
+            case 'password': // Validation d'un mot de passe
+                $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/'; // Au moins une minuscule, une majuscule, un chiffre, un caractère spécial et 8 caractères minimum
+                if (!preg_match($pattern, $data)) {
+                    throw new Exception("Invalid password");
+                }
+                return $data;
+            case 'username': // Validation d'un nom d'utilisateur
+                $pattern = '/^[a-zA-Z0-9._-]{3,20}$/'; // Entre 3 et 20 caractères alphanumériques
+                if (!preg_match($pattern, $data)) {
+                    throw new Exception("Invalid username");
+                }
+                return $data;
+            case 'text': // Validation d'un texte
+                $pattern = '/^[a-zA-Z0-9._-]{3,20}$/'; // Entre 3 et 20 caractères alphanumériques
+                if (!preg_match($pattern, $data)) {
+                    throw new Exception("Invalid text");
+                }
+                return $data;
             default:
                 throw new Exception("Invalid rules");
             }
