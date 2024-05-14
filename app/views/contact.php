@@ -119,6 +119,26 @@
         });
     </script>
 <? endif; ?>
+<? if(isset($_GET['error']) && $_GET['error'] == 'captcha'): ?>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Veuillez cocher la case "Je ne suis pas un robot".',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>
+<? endif; ?>
+<? if(isset($_GET['error']) && $_GET['error'] == 'data_invalid'): ?>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Données invalides. Veuillez vérifier les informations saisies.',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    </script>
+<? endif; ?>
     <h1>Contact</h1>
     <p>Vous pouvez nous contacter en remplissant le formulaire ci-dessous.</p>
     <form class="contact-form" method="post" action="contact/submit">

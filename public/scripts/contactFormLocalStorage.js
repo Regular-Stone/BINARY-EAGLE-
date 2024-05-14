@@ -43,7 +43,6 @@ export function resetLocalStorage() {
     const resetButton = document.querySelector('#reset');
     const message = document.querySelector('#message');
     const subject = document.querySelector('#subject');
-    const options = document.querySelectorAll('option');
     if (resetButton) {
         resetButton.addEventListener('click', (e) => {
             localStorage.removeItem('userName');
@@ -57,19 +56,21 @@ export function resetLocalStorage() {
             }
         });
     }
-    // je veux vérifier si il y a un paramètre dans l'url
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('register_success') === 'true') {
-        if (localStorage.getItem('userName')) {
-            localStorage.removeItem('userName');
+    window.addEventListener('onload', () => {
+        // je veux vérifier si il y a un paramètre dans l'url
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            if (localStorage.getItem('userName')) {
+                localStorage.removeItem('userName');
+            }
+            if (localStorage.getItem('userEmail')) {
+                localStorage.removeItem('userEmail');
+            }
+            if (localStorage.getItem('userMessage')) {
+                localStorage.removeItem('userMessage');
+            }
         }
-        if (localStorage.getItem('userEmail')) {
-            localStorage.removeItem('userEmail');
-        }
-        if (localStorage.getItem('userMessage')) {
-            localStorage.removeItem('userMessage');
-        }
-    }
+    });
 }
 export function killLocalStorage() {
     setInterval(() => {

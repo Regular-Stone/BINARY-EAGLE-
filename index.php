@@ -41,7 +41,7 @@ if (array_key_exists($page, $pathsAllowed)) {
     if ($page === '/contact/submit') {
         require_once './app/controllers/ControllerContact.php';
         $controller = new ControllerContact();
-        echo $controller->handleFormSubmission($_POST);
+        echo $controller->handleFormSubmission($_POST, $db);
     }
     require_once './app/controllers/Controller' . ucfirst($pathsAllowed[$page]) . '.php'; 
     $controller = 'Controller' . ucfirst($pathsAllowed[$page]);

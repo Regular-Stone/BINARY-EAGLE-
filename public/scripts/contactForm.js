@@ -6,4 +6,3 @@ bugReportTemplate();
 contactFormLocalStorage();
 loadLocalStorage();
 resetLocalStorage();
-

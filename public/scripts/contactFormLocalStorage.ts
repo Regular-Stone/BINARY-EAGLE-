@@ -53,7 +53,7 @@ export function resetLocalStorage() :void{
     const resetButton :HTMLButtonElement | null = document.querySelector('#reset');
     const message :HTMLTextAreaElement | null = document.querySelector('#message');
     const subject :HTMLSelectElement | null = document.querySelector('#subject');
-    const options :NodeListOf<HTMLOptionElement> | null = document.querySelectorAll('option');
+
     if(resetButton){
         resetButton.addEventListener('click', (e)=>{
             localStorage.removeItem('userName');
@@ -67,9 +67,10 @@ export function resetLocalStorage() :void{
             }
         });
     }
+    window.addEventListener('onload', ()=>{
     // je veux vérifier si il y a un paramètre dans l'url
     const urlParams = new URLSearchParams(window.location.search);
-    if(urlParams.get('register_success') === 'true'){
+    if(urlParams.get('success') === 'true'){
         if(localStorage.getItem('userName')){
             localStorage.removeItem('userName');
         }
@@ -80,7 +81,7 @@ export function resetLocalStorage() :void{
             localStorage.removeItem('userMessage');
         }
     }
-
+    });
 }
 
 export function killLocalStorage() :void{

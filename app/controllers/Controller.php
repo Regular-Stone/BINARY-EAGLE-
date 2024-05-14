@@ -38,35 +38,36 @@
         require_once './app/utils/database.php';
         $pattern = '//';
         $data = sanitaze($data);
+        $redirectionUrl = '/binary_back/contact?error=data_invalid';
         switch($rules){
             case 'email': // Validation d'une adresse email
                 $pattern = '/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/';
                 if (!preg_match($pattern, $data)) {
-                    throw new Exception("Invalid email");
+                    $this->redirect($redirectionUrl);
                 }
                 return $data;
             case 'url': // Validation d'une URL
                 $pattern = '/^(http|https):\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/';
                 if (!preg_match($pattern, $data)) {
-                    throw new Exception("Invalid URL");
+                    $this->redirect($redirectionUrl);
                 }
                 return $data;
             case 'model': // Validation du nom d'un modèle
                 $pattern = '/^[a-zA-Z]+$/';
                 if (!preg_match($pattern, $data)) {
-                    throw new Exception("Invalid model name");
+                    $this->redirect($redirectionUrl);
                 }
                 return $data;
             case 'password': // Validation d'un mot de passe
                 $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/'; // Au moins une minuscule, une majuscule, un chiffre, un caractère spécial et 8 caractères minimum
                 if (!preg_match($pattern, $data)) {
-                    throw new Exception("Invalid password");
+                    $this->redirect($redirectionUrl);
                 }
                 return $data;
             case 'username': // Validation d'un nom d'utilisateur
                 $pattern = '/^[a-zA-Z0-9._-]{3,20}$/'; // Entre 3 et 20 caractères alphanumériques
                 if (!preg_match($pattern, $data)) {
-                    throw new Exception("Invalid username");
+                    $this->redirect($redirectionUrl);
                 }
                 return $data;
             case 'text': // Validation d'un texte

@@ -7,5 +7,3 @@ bugReportTemplate();
 contactFormLocalStorage();
 loadLocalStorage();
 resetLocalStorage();
-
-console.log('contactForm.ts');
