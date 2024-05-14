@@ -50,6 +50,7 @@
                 font-size: 1.5rem;
                 padding: 1rem;
                 box-sizing: border-box;
+                
                 width: 100%;
                 font-family: var(--content-font);
             }
@@ -92,7 +93,7 @@
 
             #message {
                 border: 2px solid var(--another_purple);
-                height: 15rem;
+                height: 20vh;
                 resize: none;
             }
         }
@@ -139,8 +140,6 @@
         });
     </script>
 <? endif; ?>
-    <h1>Contact</h1>
-    <p>Vous pouvez nous contacter en remplissant le formulaire ci-dessous.</p>
     <form class="contact-form" method="post" action="contact/submit">
         <label for="name">Nom <span>*</span></label>
         <input type="text" id="name" name="name"  >
