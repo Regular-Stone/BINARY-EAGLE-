@@ -1,0 +1,53 @@
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--primary_text_color);
+    }
+    70%{
+        box-shadow: 0 0 0 5px rgba(228, 183, 255, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(228, 183, 255, 0);
+    }
+}
+
+@keyframes pulseHover {
+    0% {
+        box-shadow: 0 0 0 0 var(--another_purple);
+    }
+    70%{
+        box-shadow: 0 0 0 10px rgba(228, 183, 255, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(228, 183, 255, 0);
+    }
+}
+
+@keyframes comeByLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    90% {
+        transform: translateX(1%);
+        
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes comeByRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    90% {
+        transform: translateX(-1%);
+        
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

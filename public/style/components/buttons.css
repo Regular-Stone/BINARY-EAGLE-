@@ -10,11 +10,13 @@
     text-decoration: none;
     cursor: pointer;
     transition: all .3s;
+    animation: pulse 2s infinite;
     
     &:hover {
         background: var(--primary_text_color);
         transform: scale(1.12);
         color: var(--another_purple);
+        animation: pulseHover 2s infinite;
     }
 
     &:active {
@@ -38,3 +40,4 @@
         color: var(--primary_background_color);
     }
 }
+

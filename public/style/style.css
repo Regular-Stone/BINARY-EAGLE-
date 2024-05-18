@@ -1,6 +1,9 @@
 /* Ajout des variables */
 @import url('./base/variables.css');
 
+/* Ajout des règles des animations */
+@import url('./base/animations.css');
+
 /* Ajout des règles de base du projet */
 @import url('./base/base.css');
 

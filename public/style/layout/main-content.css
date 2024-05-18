@@ -1,9 +1,10 @@
 .main-content {
     padding-top: 15vh;
-    height: 85vh;
+    min-height: 85vh;
     color: var(--primary_text_color);
     font-family: var(--content-font);
     display: flex;
+    overflow-x: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
