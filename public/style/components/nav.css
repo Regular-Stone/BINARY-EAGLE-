@@ -57,3 +57,11 @@
         }
     }
 }
+
+@media all and (max-width: 37.5em) {
+    /* 
+    Il faut déacctiver la nav */
+    .nav {
+        display: none;
+    }
+}

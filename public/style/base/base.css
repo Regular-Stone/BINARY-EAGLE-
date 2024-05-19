@@ -4,7 +4,7 @@
 }
 
 html{
-    font-size: 10px;
+    font-size: 62.5%; /* 1rem = 10px */
     scrollbar-width: thin;
     scrollbar-color: var(--purple_color) var(--primary_background_color);
 }
@@ -13,3 +13,6 @@ body {
     font-size: 1.6rem;
     background: var(--primary_background_color);
 }
+
+/* Media query */
+

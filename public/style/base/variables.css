@@ -7,4 +7,8 @@
     --another_purple : #503C83;
     --anth_purple : #833C6F;
     --content-font : 'Rubik', sans-serif;
+    --phone: '37.5em';
+    --tablet_portrait: '56.25em';
+    --tablet_landscape: '75em';
+    --large_desktop: '112.5em';
 }
