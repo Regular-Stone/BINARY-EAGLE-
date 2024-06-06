@@ -9,7 +9,7 @@
                 <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="events" class="nav-link">Events</a></li>
                 <li class="nav-item"><a href="twitch" class="nav-link">Twitch <img class="media_twitch" src="<?ROOT?>public/img/twitch_ico.png" alt="logo_twitch"></a></li>
-                <li class="nav-item"><a href="discord" class="nav-link">Discord <img class="media_discord" src="<?ROOT?>public/img/discord_ico.png" alt="logo_discord"></a></li>
+                <li class="nav-item"><a href="https://discord.gg/GVYCbq5Fat" class="nav-link">Discord <img class="media_discord" src="<?ROOT?>public/img/discord_ico.png" alt="logo_discord"></a></li>
                 
             </ul>
         </nav>

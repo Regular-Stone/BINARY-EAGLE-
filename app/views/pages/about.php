@@ -1,3 +1,137 @@
+<style>
+    .about {
+        margin: 0 auto;
+        width: 70%;
+        text-align: justify;
+        margin-top: 6rem;
+    }
+
+    .about h1 {
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .about h2 {
+        font-size: 1.5em;
+        margin-bottom: 2rem;
+        text-align: center ;
+    }
+
+    .about p {
+        font-size: 1em;
+        margin-bottom: 4rem;
+
+    }
+
+    .about .parteners {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 20%;
+            margin: 0 1rem;
+        }
+    }
+
+    @media screen and (max-width: 37.5em){
+        .about {
+            width: 90%;
+        }
+
+        .about h1 {
+            font-size: 1.5em;
+        }
+
+        .about h2 {
+            font-size: 1.2em;
+        }
+
+        .about p {
+            font-size: 1em;
+        }
+
+        .about .parteners {
+            img {
+                width: 30%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 56.25em){ 
+        .about {
+            width: 80%;
+        }
+
+        .about h1 {
+            font-size: 1.8em;
+        }
+
+        .about h2 {
+            font-size: 1.3em;
+        }
+
+        .about p {
+            font-size: 1em;
+        }
+
+        .about .parteners {
+            img {
+                width: 25%;
+            }
+        }
+    }           
+
+    @media screen and (max-width: 75em){
+        .about {
+            width: 70%;
+        }
+
+        .about h1 {
+            font-size: 2em;
+        }
+
+        .about h2 {
+            font-size: 1.5em;
+        }
+
+        .about p {
+            font-size: 1em;
+        }
+
+        .about .parteners {
+            img {
+                width: 20%;
+            }
+        }
+    }
+
+    @media screen and (min-width: 112.5em){
+        .about {
+            width: 60%;
+        }
+
+        .about h1 {
+            font-size: 2.5em;
+        }
+
+        .about h2 {
+            font-size: 1.7em;
+        }
+
+        .about p {
+            font-size: 1.2em;
+        }
+
+        .about .parteners {
+            img {
+                width: 15%;
+            }
+        }
+    }
+
+</style>
+
 <section class="main-content">
     <div class="about">
         <h1>A propos de nous...</h1>
