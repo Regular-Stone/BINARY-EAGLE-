@@ -1,3 +1,2 @@
-composer.phar
-app/vendor/
-app/utils/env_*.*
+.htaccess
+app/core/config/

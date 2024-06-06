@@ -1,43 +1,34 @@
 <?php
-    abstract class Controller {
-        // Méthode pour afficher une vue
-        public function renderView(string $path , array $data) :string{
-            ob_start(); // Démarre la temporisation de sortie
-            require_once __DIR__ . '/../views/header.php';
-            require_once __DIR__ . '/../views/' . $path . '.php';
-            require_once __DIR__ . '/../views/footer.php';
-            return ob_get_clean(); // Lit le contenu courant du tampon de sortie puis l'efface
-        }
+abstract class Controller {
+    protected function renderView($view, $pageTitle, $data = []) {
+        count($data) > 0 ? extract($data) : null;
+        ob_start();
+        require_once 'app/views/' . $view;
+        $content = ob_get_clean();
+        require_once 'app/views/includes/template.php';
+    }
 
-        // Méthode pour rediriger l'utilisateur
-        public function redirect(string $path) :void{
-            header("Location: $path");
-            exit();
+    public function loadModel(string $model) :object{
+        $allowedModels = ['User', 'Database', 'Admin', 'Home']; // Modèles autorisés
+    
+        $validatedModel = $this->validate($model, 'model'); 
+    
+        if(!$validatedModel){
+            throw new Exception("Invalid model name");
         }
-
-        // Méthode pour charger un modèle
-        public function loadModel(string $model) :object{
-            $allowedModels = ['User', 'Database', 'Admin', 'MainContent']; // Modèles autorisés
-        
-            $validatedModel = $this->validate($model, 'model'); 
-        
-            if(!$validatedModel){
-                throw new Exception("Invalid model name");
-            }
-        
-            if(in_array($validatedModel, $allowedModels)){
-                require_once "./app/models/$validatedModel.php";
-                return class_exists($validatedModel) ? new $validatedModel() : throw new Exception("Model class not found");
-            } else {
-                throw new Exception("Model not found");
-            }
+    
+        if(in_array($validatedModel, $allowedModels)){
+            require_once "./app/models/$validatedModel.php";
+            return class_exists($validatedModel) ? new $validatedModel() : throw new Exception("Model class not found");
+        } else {
+            throw new Exception("Model not found");
         }
+    }
 
-        // Méthode pour valider les données
-        public function validate(string $data, string $rules) :string{
-        require_once './app/utils/database.php';
+    protected function validate(string $data, string $rules) :string{
+        require_once '/app/utils/cleaner.php';
         $pattern = '//';
-        $data = sanitaze($data);
+        $data = cleaner($data);
         $redirectionUrl = '/binary_back/contact?error=data_invalid';
         switch($rules){
             case 'email': // Validation d'une adresse email
@@ -80,4 +71,9 @@
                 throw new Exception("Invalid rules");
             }
         }
+
+    protected function redirect(string $url) {
+        header('Location: ' . $url);
+        exit();
     }
+}
