@@ -122,5 +122,5 @@
         </div>
     </form>
     <script  src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script type="module" src="/binary_back/public/scripts/contactForm.js"></script>
+    <script type="module" src="<?=ROOT?>public/script/contactForm.js"></script>
 </div>
