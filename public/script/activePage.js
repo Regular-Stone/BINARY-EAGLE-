@@ -2,6 +2,7 @@
 const CURRENT_URL = window.location.href;
 const NAV_LINKS = document.querySelectorAll('.nav-link');
 const ROOT_URL = 'http://localhost/binary_eagle/';
+const TEST = "On test les webhooks !";
 const urlsAuthorized = [
     `${ROOT_URL}`,
     `${ROOT_URL}about`,
